@@ -18,8 +18,8 @@ function App() {
     state.length === 0 && fetchDataAction();
   });
 
-  const handleClick = id => {
-    return dispatch({ type: "TOGGLE_COMPLETE", payload: id });
+  const handleClick = index => {
+    return dispatch({ type: "TOGGLE_COMPLETE", payload: index });
   };
 
   const createStyle = isCompleted =>
@@ -34,7 +34,7 @@ function App() {
             key={index}
             style={createStyle(todo.completed)}
             onClick={() => {
-              handleClick(todo.id - 1);
+              handleClick(index);
             }}
           >
             {todo.title}

@@ -9,10 +9,8 @@ function reducer(state, action) {
     case "FETCH_DATA":
       return [...state, ...action.payload];
     case "TOGGLE_COMPLETE":
-      console.log(action.payload);
       const todo = state[action.payload];
       todo.completed = !todo.completed;
-      console.log(todo);
       return [...state, todo];
     default:
       return state;
