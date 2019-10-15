@@ -18,15 +18,25 @@ function App() {
     state.length === 0 && fetchDataAction();
   });
 
+  const handleClick = id => {
+    return dispatch({ type: "TOGGLE_COMPLETE", payload: id });
+  };
+
   const createStyle = isCompleted =>
     isCompleted ? { textDecoration: "line-through" } : null;
 
   return (
     <>
-      <h1>TODOs</h1>
-      <ul>
-        {state.map(todo => (
-          <li key={todo.id} style={createStyle(todo.completed)}>
+      <h1>TO-DO:</h1>
+      <ul className="todos">
+        {state.map((todo, index) => (
+          <li
+            key={index}
+            style={createStyle(todo.completed)}
+            onClick={() => {
+              handleClick(todo.id - 1);
+            }}
+          >
             {todo.title}
           </li>
         ))}

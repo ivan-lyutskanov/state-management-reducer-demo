@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+h1 {
+  padding: .5rem 1rem;
+  border-bottom: .3rem solid lightseagreen;
+  width: fit-content;
+}
+
+.todos {
+  list-style: none;
+}
+
+.todos li {
+  cursor: pointer;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  color: darkslategray;
+}
